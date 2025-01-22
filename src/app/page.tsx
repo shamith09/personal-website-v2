@@ -113,29 +113,27 @@ export default function Home() {
       </nav>
 
       <section className="min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-4xl mx-auto text-center">
+        <div
+          className="max-w-4xl mx-auto text-center inline-block cursor-pointer"
+          onClick={() => {
+            setIsGlitching(true);
+            setCurrentGreeting((prev) => (prev + 1) % greetings.length);
+            const timeoutId = setTimeout(() => {
+              setIsGlitching(false);
+            }, 500);
+            return () => clearTimeout(timeoutId);
+          }}
+        >
           <h1 className="text-5xl font-bold mb-6">
-            <span
-              className="inline-block cursor-pointer"
-              onClick={() => {
-                setIsGlitching(true);
-                setCurrentGreeting((prev) => (prev + 1) % greetings.length);
-                const timeoutId = setTimeout(() => {
-                  setIsGlitching(false);
-                }, 500);
-                return () => clearTimeout(timeoutId);
-              }}
+            <GlitchText
+              disabled={!isGlitching}
+              duration={500}
+              color1="purple"
+              color2="green"
+              iterationCount={5}
             >
-              <GlitchText
-                disabled={!isGlitching}
-                duration={500}
-                color1="purple"
-                color2="green"
-                iterationCount={5}
-              >
-                {greetings[currentGreeting].text}
-              </GlitchText>
-            </span>
+              {greetings[currentGreeting].text}
+            </GlitchText>
             <span className="text-primary"> Shamith Pasula</span>
           </h1>
           <div className="flex justify-center items-center mb-8">
