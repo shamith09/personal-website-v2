@@ -1,9 +1,17 @@
 - title: PyGyat
-  description: A programming language based on Python that replaces keywords with Gen Alpha slang, showcasing creativity in language design.
+  description: A programming language based on Python that replaces keywords with Gen Alpha slang.
   skills:
     - Python
     - Language Design
   href: https://pygyat.vercel.app/
+
+- title: The Counter
+  description: A global counter that can be incremented by anyone, anywhere, anytime.
+  skills:
+    - WebSockets
+    - Go
+    - React.js
+  href: https://the-counter-nine.vercel.app/
 
 # - title: Space Technology @ Cal
 #   description: Contributing to space technology projects as a member of Space Technology at Berkeley.
