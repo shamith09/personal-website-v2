@@ -1,0 +1,13 @@
+---
+title: PyGyat - A Gen Alpha Programming Language
+date: 2024-01-15
+description: A programming language that brings a fresh perspective to Python by replacing traditional keywords with Gen Alpha slang.
+tags:
+  - Python
+  - Language Design
+  - Compiler Theory
+---
+
+PyGyat is a programming language that brings a fresh perspective to Python by replacing traditional keywords with Gen Alpha slang. This project showcases both technical expertise in language design and a creative approach to making programming more engaging.
+
+The language maintains Python's functionality while introducing a unique syntax that makes coding more approachable and fun for younger generations. Key features include custom lexer and parser implementation, full Python compatibility, and an innovative approach to syntax design.

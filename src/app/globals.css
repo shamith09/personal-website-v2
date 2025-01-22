@@ -2,20 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  ::selection {
+    background-color: theme("colors.primary");
+    color: theme("colors.light");
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .nav-link {
+    @apply relative text-light hover:text-primary transition-colors;
+  }
+
+  .btn-primary {
+    @apply px-6 py-2 bg-primary hover:bg-secondary text-light rounded-md transition-colors;
+  }
 }

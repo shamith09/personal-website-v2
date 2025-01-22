@@ -1,0 +1,137 @@
+- company: UC Berkeley
+  location: Berkeley, CA
+  roles:
+    - title: Teaching Assistant - CS 162
+      date: Jan 2025 - Present
+      description:
+        - Leading weekly office hours and grading assignments
+        - Teaching operating systems concepts to 30+ students
+    - title: Tutor - CS 162
+      date: Aug 2024 - Jan 2025
+      description:
+        - Helped students with operating systems concepts
+        - Conducted exam review sessions
+    - title: Tutor - CS 61A
+      date: May 2022 - Aug 2024
+      description:
+        - Developing software infrastructure for office hour scheduling
+        - Leading exam preparation section with small group of 5 students
+        - Helping students with projects, homework, and labs
+    - title: Academic Intern - CS 61A
+      date: Jan 2022 - May 2022
+      description:
+        - Assisted section of ~30 students in introductory CS course
+        - Conducted weekly mini-lectures on data structures and algorithms
+  skills:
+    - Operating Systems
+    - Python
+    - C
+    - x86
+    - Teaching
+    - Full-Stack Development
+- company: Palantir
+  location: New York, NY
+  roles:
+    - title: Software Engineer Intern
+      date: May 2024 - Aug 2024
+      description:
+        - Integrated Java Flight Recorder diagnostics into Apache Cassandra database
+        - Revamped task scheduling to improve Cassandra's disk usage
+  skills:
+    - Java
+    - Databases
+    - Kubernetes
+- company: ZipRecruiter
+  location: Santa Monica, CA
+  roles:
+    - title: Software Engineer Intern
+      date: May 2023 - Aug 2023
+      description:
+        - Spearheaded the development of a system for serving banners across ZipRecruiter
+          frontends
+        - Utilized Express.js and React.js with server-side rendering and static site
+          generation through gRPC and HTTP
+        - Streamlined the process of adding new banners to a single file change, enhancing
+          productivity within the development team
+  skills:
+    - React.js
+    - Next.js
+    - Express.js
+    - gRPC
+- company: Zendesk
+  location: New York, NY
+  roles:
+    - title: Software Engineer Consultant
+      date: Feb 2023 - May 2023
+      description:
+        - Managed team of 5 developers
+        - Led the creation of a user-friendly frontend for Zendesk's SLA Admin Center
+  skills:
+    - React.js
+    - Project Management
+    - Full Stack Development
+- company: Atlassian
+  location: New York, NY
+  roles:
+    - title: Software Engineering Consultant
+      date: Aug 2022 - Dec 2022
+      description:
+        - Integrated feedback app into Atlassian's Jira and Compass using Forge to improve
+          communication in development teams
+        - Led sprint planning, implemented CI/CD pipeline through GitHub, and delegated
+          tasks to team of 5 developers
+        - Designed NLP algorithm to filter 1000s of issues by similarity using AWS to
+          save time and space for end users
+  skills:
+    - React.js
+    - NLP
+    - AWS
+    - Full Stack Development
+- company: Envestnet
+  location: San Mateo, CA
+  roles:
+    - title: Software Engineer Intern
+      date: Jun 2022 - Aug 2022
+      description:
+        - Created full suite of end-to-end testing for client portal using Playwright
+        - Built UI components for Envestnet portal with React.js
+        - Worked with UI development scrum team and integrating end-to-end tests into
+          CI/CD pipeline
+        - Designed embedded finance solution for Envestnet to reach underprivileged communities
+  skills:
+    - Microsoft Playwright
+    - React.js
+- company: Assistive Technology Development, Inc
+  location: San Mateo, CA
+  roles:
+    - title: Software Engineer Intern
+      date: Jan 2022 - May 2022
+      description:
+        - Devised cost-effective, comfortable, and flexible pneumatic device to treat
+          trismus (lockjaw) for Berkeley SkyDeck-backed company
+        - Using C++ to write firmware for Arduino prototype and Python GUI to interactively
+          control hardware
+        - Researched competitors and mechanical methods to open jaw using air pressure
+        - Integrated patient-specific needs into the design and control of the system
+  skills:
+    - Analog Circuit Design
+    - C++
+    - Python
+- company: Lecturely
+  location: Remote
+  roles:
+    - title: Backend Developer
+      date: Jun 2020 - Aug 2020
+      description:
+        - Managed REST API creation for online learning platform using Agile development
+          (Scrum)
+        - Implemented user authentication, autograder, and test-taking API utilizing GraphQL,
+          MongoDB, JSON
+        - Undertook assignment recommendation to users in a social media-like feed
+        - Created original recommendation algorithm based on interest, due dates, grades,
+          and more using TypeScript
+  skills:
+    - React.js
+    - TypeScript
+    - GraphQL
+    - MongoDB
