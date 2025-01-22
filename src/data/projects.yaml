@@ -3,11 +3,11 @@
   skills:
     - Python
     - Language Design
-  href: /blog/pygyat
+  href: https://pygyat.vercel.app/
 
-- title: Space Technology @ Cal
-  description: Contributing to space technology projects as a member of Space Technology at Berkeley.
-  skills:
-    - Systems Engineering
-    - Space Tech
-  href: /blog/space-tech
+# - title: Space Technology @ Cal
+#   description: Contributing to space technology projects as a member of Space Technology at Berkeley.
+#   skills:
+#     - Systems Engineering
+#     - Space Tech
+#   href: /blog/space-tech

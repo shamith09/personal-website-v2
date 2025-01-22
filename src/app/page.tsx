@@ -1,66 +1,18 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import GlitchText from "react-glitch-effect/core/GlitchText";
-import ExperienceCard from "@/components/ExperienceCard";
-import ProjectCard from "@/components/ProjectCard";
-import { Experience, BlogPost } from "@/types";
-import { loadExperiences, loadProjects, loadBlogPosts } from "@/data";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
+import { HeroSection } from "@/sections/HeroSection";
+import { AboutSection } from "@/sections/AboutSection";
+import { ExperienceSection } from "@/sections/ExperienceSection";
+import { ProjectsSection } from "@/sections/ProjectsSection";
+import { BlogSection } from "@/sections/BlogSection";
 
-const skills = [
-  "Python",
-  "C",
-  "Go",
-  "Rust",
-  "x86",
-  "TypeScript",
-  "React.js",
-  "Databases",
-  "Full Stack Development",
-];
-
-const greetings = [
-  "Hi, I'm",
-  "Hola, soy",
-  "你好，我是",
-  "नमस्ते, मैं हूं",
-  "Bonjour, je suis",
-  "こんにちは、私は",
-  "Olá, eu sou",
-  "Ciao, sono",
-  "Hallo, ich bin",
-  "안녕하세요, 저는",
-];
-
-declare global {
-  interface Window {
-    greetingInterval?: NodeJS.Timeout;
-  }
-}
+const sections = ["Hero", "About", "Experience", "Projects"]; // TODO: Add Blog
 
 export default function Home() {
-  const [currentGreeting, setCurrentGreeting] = useState(0);
-  const [isGlitching, setIsGlitching] = useState(false);
-  const [showAllExperience, setShowAllExperience] = useState(false);
-  const [expandedExperiences, setExpandedExperiences] = useState<Set<string>>(
-    new Set()
-  );
-  const experiences = loadExperiences();
-  const projects = loadProjects();
-  const [blogPosts, setBlogPosts] = useState<Omit<BlogPost, "content">[]>([]);
-  const [loadingPosts, setLoadingPosts] = useState(true);
-  const visibleExperience = showAllExperience
-    ? experiences
-    : experiences.slice(0, 3);
-
-  useEffect(() => {
-    loadBlogPosts()
-      .then(setBlogPosts)
-      .finally(() => setLoadingPosts(false));
-  }, []);
-
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
@@ -68,218 +20,83 @@ export default function Home() {
     };
   }, []);
 
-  const toggleExperience = (key: string) => {
-    setExpandedExperiences((prev) => {
-      const newSet = new Set(prev);
-      if (newSet.has(key)) {
-        newSet.delete(key);
-      } else {
-        newSet.add(key);
-      }
-      return newSet;
-    });
+  const sectionComponents = {
+    hero: <HeroSection />,
+    about: <AboutSection />,
+    experience: <ExperienceSection />,
+    projects: <ProjectsSection />,
+    blog: <BlogSection />,
   };
 
   return (
     <main className="min-h-screen">
       <nav className="fixed w-full px-6 py-4 backdrop-blur-sm bg-dark/80 z-50">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <Link
-            href="/"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0 });
-              window.history.pushState({}, "", "/");
-            }}
-            className="text-xl font-mono text-primary"
+          <motion.div
+            className="relative group"
+            whileHover="hover"
+            initial="initial"
+            animate="initial"
           >
-            SP
-          </Link>
+            <Link
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0 });
+                window.history.pushState({}, "", "/");
+              }}
+              className="text-xl font-mono relative z-10 flex items-center"
+            >
+              <motion.span className="text-primary">S</motion.span>
+              <motion.div
+                className="overflow-hidden w-0 group-hover:w-auto"
+                variants={{
+                  initial: { width: 0 },
+                  hover: { width: "auto" }
+                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <span className="whitespace-nowrap">hamith</span>
+                <span className="whitespace-nowrap">&nbsp;</span>
+              </motion.div>
+              <motion.span className="text-primary">P</motion.span>
+              <motion.div
+                className="overflow-hidden w-0 group-hover:w-auto"
+                variants={{
+                  initial: { width: 0 },
+                  hover: { width: "auto" }
+                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <span className="whitespace-nowrap">asula</span>
+              </motion.div>
+            </Link>
+          </motion.div>
           <div className="space-x-8">
-            <Link href="#about" className="nav-link">
-              About
-            </Link>
-            <Link href="#experience" className="nav-link">
-              Experience
-            </Link>
-            <Link href="#projects" className="nav-link">
-              Projects
-            </Link>
-            <Link href="#blog" className="nav-link">
-              Blog
-            </Link>
+            {sections
+              .filter((section) => section !== "Hero")
+              .map((section) => (
+                <Link
+                  key={section.toLowerCase()}
+                  href={`#${section.toLowerCase()}`}
+                  className="nav-link"
+                >
+                  {section}
+                </Link>
+              ))}
           </div>
         </div>
       </nav>
 
-      <section className="min-h-screen flex items-center justify-center px-6">
-        <div
-          className="max-w-4xl mx-auto text-center inline-block cursor-pointer"
-          onClick={() => {
-            setIsGlitching(true);
-            setCurrentGreeting((prev) => (prev + 1) % greetings.length);
-            const timeoutId = setTimeout(() => {
-              setIsGlitching(false);
-            }, 500);
-            return () => clearTimeout(timeoutId);
-          }}
-        >
-          <h1 className="text-5xl font-bold mb-6">
-            <span className="inline-block">
-              <GlitchText
-                disabled={!isGlitching}
-                duration={500}
-                color1="purple"
-                color2="green"
-                iterationCount={5}
-              >
-                {greetings[currentGreeting]}
-              </GlitchText>
-            </span>
-            <span className="text-primary"> Shamith Pasula</span>
-          </h1>
-          <div className="flex justify-center items-center mb-8">
-            <Link href="#about" className="text-4xl text-gray-300">
-              ↓
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="min-h-screen flex items-center px-6 py-20">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">About Me</h2>
-          <p className="text-gray-300 mb-6">
-            I&apos;m a software engineer and UC Berkeley student passionate
-            about web development and systems engineering. I focus on building
-            innovative solutions and enjoy working on complex technical
-            challenges.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-dark/50 p-6 rounded-lg border border-primary/20">
-              <h3 className="text-xl font-bold mb-4">Skills</h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 bg-primary/10 rounded-full text-primary"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="bg-dark/50 p-6 rounded-lg border border-primary/20">
-              <div className="flex items-center justify-between gap-8 w-full">
-                <div className="flex-2">
-                  <h3 className="text-xl font-bold mb-4">Education</h3>
-                  <p className="text-gray-300">
-                    B.A. Computer Science
-                    <br />
-                    University of California, Berkeley
-                    <br />
-                    Expected Graduation: 2025
-                    <br />
-                    GPA: 3.86
-                  </p>
-                </div>
-                <div className="flex flex-1 justify-end items-center">
-                  <Image
-                    src="/berkeley.svg"
-                    alt="UC Berkeley Logo"
-                    width={100}
-                    height={100}
-                    className="opacity-80 w-auto h-full max-h-[200px]"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="experience"
-        className="min-h-screen flex items-center px-6 py-20"
-      >
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Experience</h2>
-          <div className="space-y-8">
-            {visibleExperience.map((exp: Experience) => {
-              const key = exp.company;
-              return (
-                <ExperienceCard
-                  key={key}
-                  {...exp}
-                  isExpanded={expandedExperiences.has(key)}
-                  onToggle={() => toggleExperience(key)}
-                />
-              );
-            })}
-          </div>
-          {!showAllExperience && experiences.length > 3 && (
-            <button
-              onClick={() => setShowAllExperience(true)}
-              className="mt-8 w-full py-3 bg-dark/50 border border-primary/20 hover:border-primary rounded-lg text-primary transition-colors"
-            >
-              Show More
-            </button>
-          )}
-        </div>
-      </section>
-
-      <section
-        id="projects"
-        className="min-h-screen flex items-center px-6 py-20"
-      >
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="blog" className="min-h-screen flex items-center px-6 py-20">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Blog</h2>
-          <div className="space-y-6">
-            {loadingPosts ? (
-              <div className="bg-dark/50 p-6 rounded-lg border border-primary/20">
-                Loading posts...
-              </div>
-            ) : (
-              blogPosts.map((post) => (
-                <Link
-                  href={`/blog/${post.slug}`}
-                  key={post.slug}
-                  className="block group"
-                >
-                  <article className="bg-dark/50 p-6 rounded-lg border border-primary/20 hover:border-primary transition-colors">
-                    <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
-                      {post.title}
-                    </h3>
-                    <p className="text-primary mb-2">{post.date}</p>
-                    <p className="text-gray-300 mb-4">{post.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {post.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-1 text-sm bg-primary/10 rounded-full text-primary"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </article>
-                </Link>
-              ))
-            )}
-          </div>
-        </div>
-      </section>
+      {sections.map((section) => (
+        <React.Fragment key={section.toLowerCase()}>
+          {
+            sectionComponents[
+              section.toLowerCase() as keyof typeof sectionComponents
+            ]
+          }
+        </React.Fragment>
+      ))}
     </main>
   );
 }
