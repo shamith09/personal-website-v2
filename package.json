@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.26.0",
+    "@geist-ui/icons": "^1.0.2",
     "@heroicons/react": "^2.2.0",
     "@types/js-yaml": "^4.0.9",
     "framer-motion": "^12.0.1",

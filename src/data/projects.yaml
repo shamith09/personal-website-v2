@@ -5,20 +5,26 @@
     - JavaScript
     - SQL
   href: https://savewithmaple.vercel.app/
+  image: /projects/maple.png
+  github: https://github.com/shamith09/maple
 
-# - title: PlexTech Member Portal
-#   description: An open-source alternative to PayPal Honey that automatically finds and applies the best coupon codes while you shop, without collecting your data or stealing money from affiliate links.
-#   skills:
-#     - HTML
-#     - JavaScript
-#     - SQL
-#   href: https://savewithmaple.vercel.app/
+- title: PlexTech Member Portal
+  description: A member portal for PlexTech, a UC Berkeley student organization providing software consulting services. Features include automated reimbursement processing, QR code attendance tracking, and a public forum with private/anonymous posting capabilities. Built with React.js, Flask, and MongoDB.
+  skills:
+    - HTML
+    - JavaScript
+    - SQL
+  href: https://savewithmaple.vercel.app/
+  image: /projects/plextech.png
+  github: https://github.com/PlexTechIP/plextech-member-portal
 
 - title: PyGyat
   description: A programming language based on Python that replaces keywords with Gen Alpha slang.
   skills:
     - Python
   href: https://pygyat.vercel.app/
+  image: /projects/pygyat.webp
+  github: https://github.com/shamith09/pygyat
 
 - title: The Counter
   description: A global counter that can be incremented by anyone, anywhere, anytime.
@@ -27,6 +33,8 @@
     - Go
     - React.js
   href: https://the-counter-nine.vercel.app/
+  image: /projects/counter.png
+  # github: https://github.com/shamith09/the-counter
 
 # - title: Space Technology @ Cal
 #   description: Contributing to space technology projects as a member of Space Technology at Berkeley.

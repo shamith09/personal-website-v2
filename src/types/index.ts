@@ -16,6 +16,8 @@ export interface Project {
   description: string;
   skills: string[];
   href: string;
+  image?: string;
+  github?: string;
 }
 
 export interface BlogPost {
