@@ -22,16 +22,16 @@ const skills = [
 ];
 
 const greetings = [
-  { text: "Hi, I'm", lang: "en" },
-  { text: "Hola, soy", lang: "es" },
-  { text: "你好，我是", lang: "zh" },
-  { text: "नमस्ते, मैं हूं", lang: "hi" },
-  { text: "Bonjour, je suis", lang: "fr" },
-  { text: "こんにちは、私は", lang: "ja" },
-  { text: "Olá, eu sou", lang: "pt" },
-  { text: "Ciao, sono", lang: "it" },
-  { text: "Hallo, ich bin", lang: "de" },
-  { text: "안녕하세요, 저는", lang: "ko" },
+  "Hi, I'm",
+  "Hola, soy",
+  "你好，我是",
+  "नमस्ते, मैं हूं",
+  "Bonjour, je suis",
+  "こんにちは、私は",
+  "Olá, eu sou",
+  "Ciao, sono",
+  "Hallo, ich bin",
+  "안녕하세요, 저는",
 ];
 
 declare global {
@@ -125,15 +125,17 @@ export default function Home() {
           }}
         >
           <h1 className="text-5xl font-bold mb-6">
-            <GlitchText
-              disabled={!isGlitching}
-              duration={500}
-              color1="purple"
-              color2="green"
-              iterationCount={5}
-            >
-              {greetings[currentGreeting].text}
-            </GlitchText>
+            <span className="inline-block">
+              <GlitchText
+                disabled={!isGlitching}
+                duration={500}
+                color1="purple"
+                color2="green"
+                iterationCount={5}
+              >
+                {greetings[currentGreeting]}
+              </GlitchText>
+            </span>
             <span className="text-primary"> Shamith Pasula</span>
           </h1>
           <div className="flex justify-center items-center mb-8">
