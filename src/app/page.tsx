@@ -86,7 +86,7 @@ export default function Home() {
           <h1 className="text-5xl font-bold mb-6">
             Hi, I&apos;m <span className="text-primary">Shamith Pasula</span>
           </h1>
-          <p className="text-4xl text-gray-300 mb-8">↓</p>
+          <Link href="#about" className="text-4xl text-gray-300 mb-8 block">↓</Link>
         </motion.div>
       </section>
 
