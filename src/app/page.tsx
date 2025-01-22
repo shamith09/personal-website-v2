@@ -7,9 +7,12 @@ import { AboutSection } from "@/sections/AboutSection";
 import { ExperienceSection } from "@/sections/ExperienceSection";
 import { ProjectsSection } from "@/sections/ProjectsSection";
 import { BlogSection } from "@/sections/BlogSection";
+import { ConnectSection } from "@/sections/ConnectSection";
 import { Navbar } from "@/components/Navbar";
 
-const sections = ["Hero", "About", "Experience", "Projects"]; // TODO: Add Blog
+// TODO: Add Blog
+const sections = ["Hero", "About", "Experience", "Projects", "Connect"];
+const navSections = ["About", "Experience", "Projects", "Connect"];
 
 export default function Home() {
   useEffect(() => {
@@ -25,11 +28,12 @@ export default function Home() {
     experience: <ExperienceSection />,
     projects: <ProjectsSection />,
     blog: <BlogSection />,
+    connect: <ConnectSection />,
   };
 
   return (
     <main className="min-h-screen">
-      <Navbar />
+      <Navbar sections={navSections} />
       {sections.map((section) => (
         <React.Fragment key={section.toLowerCase()}>
           {

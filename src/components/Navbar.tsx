@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-const sections = ["About", "Experience", "Projects"];
-
-export const Navbar = () => {
+export const Navbar = ({ sections }: { sections: string[] }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
