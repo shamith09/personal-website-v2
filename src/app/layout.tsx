@@ -3,18 +3,18 @@ import { GeistSans } from "geist/font/sans";
 import NetworkBackground from "@/components/NetworkBackground";
 
 export const metadata = {
-  metadataBase: new URL("https://shamithpasulav2.vercel.app/"),
+  metadataBase: new URL("https://shamithpasula.vercel.app/"),
   title: "Shamith Pasula | Software Engineer",
   description: "Shamith Pasula's personal website and portfolio",
   openGraph: {
     title: "Shamith Pasula | Software Engineer",
     description:
       "Full-stack developer passionate about building innovative solutions",
-    url: "https://shamithpasulav2.vercel.app/", // TODO: keep updated
+    url: "https://shamithpasula.vercel.app/",
     siteName: "Shamith Pasula",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://shamithpasula.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Shamith Pasula - Software Engineer",
@@ -28,7 +28,7 @@ export const metadata = {
     title: "Shamith Pasula | Software Engineer",
     description:
       "Full-stack developer passionate about building innovative solutions",
-    images: ["/og-image.png"],
+    images: ["https://shamithpasula.vercel.app/og-image.png"],
   },
 };
 
