@@ -1,8 +1,23 @@
+- title: Maple
+  description: An open-source alternative to PayPal Honey that automatically finds and applies the best coupon codes while you shop, without collecting your data or stealing money from affiliate links.
+  skills:
+    - HTML
+    - JavaScript
+    - SQL
+  href: https://savewithmaple.vercel.app/
+
+# - title: PlexTech Member Portal
+#   description: An open-source alternative to PayPal Honey that automatically finds and applies the best coupon codes while you shop, without collecting your data or stealing money from affiliate links.
+#   skills:
+#     - HTML
+#     - JavaScript
+#     - SQL
+#   href: https://savewithmaple.vercel.app/
+
 - title: PyGyat
   description: A programming language based on Python that replaces keywords with Gen Alpha slang.
   skills:
     - Python
-    - Language Design
   href: https://pygyat.vercel.app/
 
 - title: The Counter
