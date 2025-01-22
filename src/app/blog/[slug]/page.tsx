@@ -5,7 +5,7 @@ import BlogPostContent from "./BlogPostContent";
 export default async function BlogPost({
   params,
 }: {
-  params: Promise<{ slug: string }> | { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const resolvedParams = await Promise.resolve(params);
   const post = await loadBlogPost(resolvedParams.slug);
