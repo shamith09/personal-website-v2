@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import GlitchText from "react-glitch-effect/core/GlitchText";
 import ExperienceCard from "@/components/ExperienceCard";
 import ProjectCard from "@/components/ProjectCard";
 import { Experience, BlogPost } from "@/types";
@@ -20,7 +21,28 @@ const skills = [
   "Full Stack Development",
 ];
 
+const greetings = [
+  { text: "Hi, I'm", lang: "en" },
+  { text: "Hola, soy", lang: "es" },
+  { text: "你好，我是", lang: "zh" },
+  { text: "नमस्ते, मैं हूं", lang: "hi" },
+  { text: "Bonjour, je suis", lang: "fr" },
+  { text: "こんにちは、私は", lang: "ja" },
+  { text: "Olá, eu sou", lang: "pt" },
+  { text: "Ciao, sono", lang: "it" },
+  { text: "Hallo, ich bin", lang: "de" },
+  { text: "안녕하세요, 저는", lang: "ko" },
+];
+
+declare global {
+  interface Window {
+    greetingInterval?: NodeJS.Timeout;
+  }
+}
+
 export default function Home() {
+  const [currentGreeting, setCurrentGreeting] = useState(0);
+  const [isGlitching, setIsGlitching] = useState(false);
   const [showAllExperience, setShowAllExperience] = useState(false);
   const [expandedExperiences, setExpandedExperiences] = useState<Set<string>>(
     new Set()
@@ -63,10 +85,11 @@ export default function Home() {
       <nav className="fixed w-full px-6 py-4 backdrop-blur-sm bg-dark/80 z-50">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <Link
-            href="#"
+            href="/"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0 });
+              window.history.pushState({}, "", "/");
             }}
             className="text-xl font-mono text-primary"
           >
@@ -92,11 +115,34 @@ export default function Home() {
       <section className="min-h-screen flex items-center justify-center px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-6">
-            Hi, I&apos;m <span className="text-primary">Shamith Pasula</span>
+            <span
+              className="inline-block cursor-pointer"
+              onClick={() => {
+                setIsGlitching(true);
+                setCurrentGreeting((prev) => (prev + 1) % greetings.length);
+                const timeoutId = setTimeout(() => {
+                  setIsGlitching(false);
+                }, 500);
+                return () => clearTimeout(timeoutId);
+              }}
+            >
+              <GlitchText
+                disabled={!isGlitching}
+                duration={500}
+                color1="purple"
+                color2="green"
+                iterationCount={5}
+              >
+                {greetings[currentGreeting].text}
+              </GlitchText>
+            </span>
+            <span className="text-primary"> Shamith Pasula</span>
           </h1>
-          <Link href="#about" className="text-4xl text-gray-300 mb-8 block">
-            ↓
-          </Link>
+          <div className="flex justify-center items-center mb-8">
+            <Link href="#about" className="text-4xl text-gray-300">
+              ↓
+            </Link>
+          </div>
         </div>
       </section>
 
