@@ -52,7 +52,7 @@ export default function Home() {
                 className="overflow-hidden w-0 group-hover:w-auto"
                 variants={{
                   initial: { width: 0 },
-                  hover: { width: "auto" }
+                  hover: { width: "auto" },
                 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
@@ -64,7 +64,7 @@ export default function Home() {
                 className="overflow-hidden w-0 group-hover:w-auto"
                 variants={{
                   initial: { width: 0 },
-                  hover: { width: "auto" }
+                  hover: { width: "auto" },
                 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
@@ -79,11 +79,19 @@ export default function Home() {
                 <Link
                   key={section.toLowerCase()}
                   href={`#${section.toLowerCase()}`}
-                  className="nav-link"
+                  className="nav-link font-mono uppercase"
                 >
                   {section}
                 </Link>
               ))}
+            <Link
+              href="/Shamith_Pasula_resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link font-mono uppercase"
+            >
+              Resume
+            </Link>
           </div>
         </div>
       </nav>
