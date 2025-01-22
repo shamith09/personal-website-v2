@@ -3,8 +3,33 @@ import { GeistSans } from "geist/font/sans";
 import NetworkBackground from "@/components/NetworkBackground";
 
 export const metadata = {
+  metadataBase: new URL("https://shamithpasulav2.vercel.app/"),
   title: "Shamith Pasula | Software Engineer",
-  description: "Personal website and portfolio of Shamith Pasula",
+  description: "Shamith Pasula's personal website and portfolio",
+  openGraph: {
+    title: "Shamith Pasula | Software Engineer",
+    description:
+      "Full-stack developer passionate about building innovative solutions",
+    url: "https://shamithpasulav2.vercel.app/", // TODO: keep updated
+    siteName: "Shamith Pasula",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shamith Pasula - Software Engineer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shamith Pasula | Software Engineer",
+    description:
+      "Full-stack developer passionate about building innovative solutions",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

@@ -120,7 +120,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="bg-dark/50 p-6 rounded-lg border border-primary/20">
-                <div className="flex items-center justify-between gap-8">
+                <div className="flex items-center justify-between gap-8 w-full">
                   <div className="flex-2">
                     <h3 className="text-xl font-bold mb-4">Education</h3>
                     <p className="text-gray-300">
@@ -133,13 +133,13 @@ export default function Home() {
                       GPA: 3.86
                     </p>
                   </div>
-                  <div className="flex-1">
+                  <div className="flex flex-1 justify-end items-center">
                     <Image
                       src="/berkeley.svg"
                       alt="UC Berkeley Logo"
                       width={100}
                       height={100}
-                      className="opacity-80 w-full h-auto"
+                      className="opacity-80 w-auto h-full max-h-[200px]"
                     />
                   </div>
                 </div>
