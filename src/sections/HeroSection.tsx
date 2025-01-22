@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Link from "next/link";
 import GlitchText from "react-glitch-effect/core/GlitchText";
 
@@ -30,11 +30,8 @@ export const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-6">
-      <div
-        className="max-w-4xl mx-auto text-center inline-block cursor-pointer"
-        onClick={handleGreetingClick}
-      >
-        <h1 className="text-5xl font-bold mb-6">
+      <div className="max-w-4xl mx-auto text-center inline-block cursor-pointer">
+        <h1 className="text-5xl font-bold mb-6" onClick={handleGreetingClick}>
           <span className="inline-block">
             <GlitchText
               disabled={!isGlitching}
@@ -56,4 +53,4 @@ export const HeroSection = () => {
       </div>
     </section>
   );
-}; 
+};
