@@ -5,7 +5,7 @@ import GlitchText from "react-glitch-effect/core/GlitchText";
 const greetings = [
   { greeting: <>Hi, I&apos;m</>, punctuation: <>.</> },
   { greeting: <>Hola, soy</>, punctuation: <>.</> },
-  { greeting: <>#define</>, punctuation: <>;</> },
+  { greeting: <span className="font-mono">#define</span>, punctuation: <span className="font-mono">;</span> },
   { greeting: <>こんにちは、私は</>, punctuation: <>。</> },
   {
     greeting: <span className="font-mono">var me =</span>,

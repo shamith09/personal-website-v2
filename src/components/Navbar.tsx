@@ -75,7 +75,7 @@ export const Navbar = ({ sections }: { sections: string[] }) => {
   );
 
   return (
-    <nav className="fixed w-full px-6 py-4 backdrop-blur-sm bg-dark/80 z-50">
+    <nav className="fixed w-full px-6 py-4 backdrop-blur-sm bg-dark/50 z-50">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
         <Logo />
 

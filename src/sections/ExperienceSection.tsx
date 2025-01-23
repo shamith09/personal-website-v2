@@ -40,7 +40,7 @@ export const ExperienceSection = () => {
         {!showAllExperience && experiences.length > 3 && (
           <button
             onClick={() => setShowAllExperience(true)}
-            className="mt-8 w-full py-3 bg-dark/50 border border-primary/20 hover:border-primary rounded-lg text-primary transition-colors"
+            className="mt-8 w-full py-3 backdrop-blur-xs bg-zinc-900/50 border border-primary/20 hover:border-primary rounded-lg text-primary transition-colors"
           >
             Show More
           </button>

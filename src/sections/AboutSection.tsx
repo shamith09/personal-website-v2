@@ -24,7 +24,7 @@ export const AboutSection = () => (
         challenges.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-dark/50 p-6 rounded-lg border border-primary/20">
+        <div className="backdrop-blur-xs bg-zinc-900/50 p-6 rounded-lg border border-primary/20">
           <h3 className="text-xl font-bold mb-4">Skills</h3>
           <div className="flex flex-wrap gap-2">
             {skills.map((skill) => (
@@ -37,7 +37,7 @@ export const AboutSection = () => (
             ))}
           </div>
         </div>
-        <div className="bg-dark/50 p-6 rounded-lg border border-primary/20">
+        <div className="backdrop-blur-xs bg-zinc-900/50 p-6 rounded-lg border border-primary/20">
           <div className="flex items-center justify-between gap-8 w-full">
             <div className="flex-2 max-w-[60%]">
               <h3 className="text-xl font-bold mb-4">Education</h3>

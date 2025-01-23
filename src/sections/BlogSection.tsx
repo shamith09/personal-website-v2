@@ -19,7 +19,7 @@ export const BlogSection = () => {
         <h2 className="text-3xl font-bold mb-8">Blog</h2>
         <div className="space-y-6">
           {loadingPosts ? (
-            <div className="bg-dark/50 p-6 rounded-lg border border-primary/20">
+            <div className="backdrop-blur-xs bg-zinc-900/50 p-6 rounded-lg border border-primary/20">
               Loading posts...
             </div>
           ) : (
@@ -29,7 +29,7 @@ export const BlogSection = () => {
                 key={post.slug}
                 className="block group"
               >
-                <article className="bg-dark/50 p-6 rounded-lg border border-primary/20 hover:border-primary transition-colors">
+                <article className="backdrop-blur-xs bg-zinc-900/50 p-6 rounded-lg border border-primary/20 hover:border-primary transition-colors">
                   <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
                     {post.title}
                   </h3>

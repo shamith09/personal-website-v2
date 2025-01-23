@@ -27,7 +27,7 @@ export default function ProjectCard({
   return (
     <div className="relative h-full">
       <Link href={href} className="block group h-full">
-        <div className="bg-dark/50 p-6 rounded-lg border border-primary/20 group-hover:border-primary transition-colors h-full flex flex-col">
+        <div className="backdrop-blur-sm bg-dark/30 p-6 rounded-lg border border-primary/20 group-hover:border-primary transition-colors h-full flex flex-col">
           <div className="flex items-center gap-4 mb-4">
             <div className="flex items-center gap-4 flex-grow">
               {image && (

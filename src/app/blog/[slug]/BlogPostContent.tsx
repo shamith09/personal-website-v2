@@ -12,7 +12,7 @@ export default function BlogPostContent({ post }: { post: BlogPost }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="bg-dark/50 p-8 rounded-lg border border-primary/20"
+          className="backdrop-blur-xs bg-zinc-900/50 p-8 rounded-lg border border-primary/20"
         >
           <Link
             href="/#blog"

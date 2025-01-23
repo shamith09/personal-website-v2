@@ -16,7 +16,7 @@ export default function ExperienceCard({
   const visibleRoles = isExpanded ? roles : roles.slice(0, 1);
 
   return (
-    <div className="bg-dark/50 p-6 rounded-lg border border-primary/20">
+    <div className="backdrop-blur-xs bg-zinc-900/50 p-6 rounded-lg border border-primary/20">
       <h3 className="text-xl font-bold">{company}</h3>
       <p className="text-sm text-primary mb-4">{location}</p>
 
@@ -30,7 +30,7 @@ export default function ExperienceCard({
           >
             <p className="font-bold">{role.title}</p>
             <p className="text-primary text-sm mb-2">{role.date}</p>
-            <ul className="list-disc list-inside text-gray-300">
+            <ul className="list-disc list-outside pl-4 text-gray-300">
               {role.description.map((desc) => (
                 <li key={desc}>{desc}</li>
               ))}
