@@ -18,7 +18,7 @@ export default function ExperienceCard({
   return (
     <div className="bg-dark/50 p-6 rounded-lg border border-primary/20">
       <h3 className="text-xl font-bold">{company}</h3>
-      <p className="text-sm text-secondary mb-4">{location}</p>
+      <p className="text-sm text-primary mb-4">{location}</p>
 
       <div className="space-y-4">
         {visibleRoles.map((role, index) => (
