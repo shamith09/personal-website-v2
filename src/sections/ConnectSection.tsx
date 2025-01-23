@@ -38,7 +38,10 @@ export const ConnectSection = () => {
   ];
 
   return (
-    <section id="connect" className="min-h-screen flex items-center px-6 py-20 max-w-4xl">
+    <section
+      id="connect"
+      className="min-h-screen flex items-center px-6 py-20 max-w-4xl"
+    >
       <div className="mx-auto">
         <h2 className="text-3xl font-bold mb-8">Connect With Me</h2>
         <div className="flex gap-8 justify-center items-center">
@@ -48,7 +51,7 @@ export const ConnectSection = () => {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition-colors duration-200"
+              className="text-gray-300 hover:text-primary transition-all duration-200 transform hover:scale-125"
             >
               {social.icon}
             </Link>
