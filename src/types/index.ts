@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface Role {
   title: string;
   date: string;
@@ -25,6 +27,6 @@ export interface BlogPost {
   title: string;
   date: string;
   description: string;
-  content: string;
+  content: ReactNode;
   tags: string[];
 }

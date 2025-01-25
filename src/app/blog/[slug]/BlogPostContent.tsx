@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import type { BlogPost } from "@/types";
-import ReactMarkdown from "react-markdown";
 
 export default function BlogPostContent({ post }: { post: BlogPost }) {
   return (
@@ -34,7 +33,7 @@ export default function BlogPostContent({ post }: { post: BlogPost }) {
             ))}
           </div>
           <div className="prose prose-invert max-w-none">
-            <ReactMarkdown>{post.content}</ReactMarkdown>
+            {post.content}
           </div>
         </motion.article>
       </div>
