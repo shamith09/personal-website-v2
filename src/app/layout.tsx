@@ -1,6 +1,7 @@
 import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import NetworkBackground from "@/components/NetworkBackground";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   metadataBase: new URL("https://shamithpasula.vercel.app/"),
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body className="bg-dark text-light min-h-screen font-sans">
         <NetworkBackground />
         {children}
+        <Analytics />
       </body>
     </html>
   );
