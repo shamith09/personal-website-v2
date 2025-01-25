@@ -47,7 +47,7 @@ export function loadProjects(): Project[] {
 export async function loadBlogPosts(): Promise<Omit<BlogPost, "content">[]> {
   const posts = await Promise.all(
     blogSlugs.map(async (slug) => {
-      const response = await fetch(`${getBaseUrl()}/blog/${slug}.md`);
+      const response = await fetch(`${getBaseUrl()}/content/blog/${slug}.md`);
       const markdown = await response.text();
       const { data } = matter(markdown);
 
@@ -68,7 +68,7 @@ export async function loadBlogPosts(): Promise<Omit<BlogPost, "content">[]> {
 
 export async function loadBlogPost(slug: string): Promise<BlogPost | null> {
   try {
-    const response = await fetch(`${getBaseUrl()}/blog/${slug}.md`);
+    const response = await fetch(`${getBaseUrl()}/content/blog/${slug}.md`);
     if (!response.ok) {
       console.error(`Failed to load blog post: ${response.status} ${response.statusText}`);
       return null;
