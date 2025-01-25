@@ -1,6 +1,10 @@
 import { notFound } from 'next/navigation';
-import { loadBlogPost } from "@/data";
+import { loadBlogPost, blogSlugs } from "@/data";
 import BlogPostContent from "./BlogPostContent";
+
+export async function generateStaticParams() {
+  return blogSlugs.map(slug => ({ slug }));
+}
 
 export default async function BlogPost({
   params,

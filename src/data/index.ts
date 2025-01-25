@@ -3,6 +3,25 @@ import experienceData from "./experience.yaml";
 import projectsData from "./projects.yaml";
 import matter from "gray-matter";
 
+export const blogSlugs = ["pygyat", "space-tech"] as const;
+export const sections = ["Hero", "About", "Experience", "Projects", "Connect"];
+export const navSections = ["About", "Experience", "Projects", "Connect"];
+
+export const greetings = [
+  { greeting: "Hi, I'm", punctuation: "." },
+  { greeting: "Hola, soy", punctuation: "." },
+  { greeting: "#define", punctuation: ";" },
+  { greeting: "こんにちは、私は", punctuation: "。" },
+  { greeting: "var me =", punctuation: ";" },
+  { greeting: "नमस्ते, मैं हूं", punctuation: "।" },
+  { greeting: "你好，我是", punctuation: "。" },
+  { greeting: "Bonjour, je suis", punctuation: "." },
+  { greeting: "Olá, eu sou", punctuation: "." },
+  { greeting: "Ciao, sono", punctuation: "." },
+  { greeting: "Hallo, ich bin", punctuation: "." },
+  { greeting: "안녕하세요, 저는", punctuation: "." },
+] as const;
+
 function formatDate(date: string): string {
   return new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
@@ -12,7 +31,7 @@ function formatDate(date: string): string {
 }
 
 function getBaseUrl() {
-  if (typeof window !== 'undefined') return ''; // browser should use relative url
+  if (typeof window !== "undefined") return ""; // browser should use relative url
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`; // SSR should use vercel url
   return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
 }
@@ -26,9 +45,8 @@ export function loadProjects(): Project[] {
 }
 
 export async function loadBlogPosts(): Promise<Omit<BlogPost, "content">[]> {
-  const slugs = ["pygyat", "space-tech"]; // This could be fetched from an API or directory listing
   const posts = await Promise.all(
-    slugs.map(async (slug) => {
+    blogSlugs.map(async (slug) => {
       const response = await fetch(`${getBaseUrl()}/blog/${slug}.md`);
       const markdown = await response.text();
       const { data } = matter(markdown);
