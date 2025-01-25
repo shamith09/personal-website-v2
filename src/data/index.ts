@@ -69,10 +69,15 @@ export async function loadBlogPosts(): Promise<Omit<BlogPost, "content">[]> {
 export async function loadBlogPost(slug: string): Promise<BlogPost | null> {
   try {
     const response = await fetch(`${getBaseUrl()}/blog/${slug}.md`);
-    if (!response.ok) return null;
+    if (!response.ok) {
+      console.error(`Failed to load blog post: ${response.status} ${response.statusText}`);
+      return null;
+    }
 
     const markdown = await response.text();
+    console.log("Raw markdown:", markdown);
     const { data, content } = matter(markdown);
+    console.log("Parsed content:", content);
 
     return {
       slug,

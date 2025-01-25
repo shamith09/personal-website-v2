@@ -4,8 +4,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import type { BlogPost } from "@/types";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+import rehypeHighlight from "rehype-highlight";
 
 export default function BlogPostContent({ post }: { post: BlogPost }) {
+  console.log("Blog post content:", post.content);
+  
   return (
     <main className="min-h-screen pt-24 px-6">
       <div className="max-w-4xl mx-auto">
@@ -34,7 +39,12 @@ export default function BlogPostContent({ post }: { post: BlogPost }) {
             ))}
           </div>
           <div className="prose prose-invert max-w-none">
-            <ReactMarkdown>{post.content}</ReactMarkdown>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeRaw, rehypeHighlight]}
+            >
+              {post.content}
+            </ReactMarkdown>
           </div>
         </motion.article>
       </div>
