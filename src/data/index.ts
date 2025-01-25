@@ -29,7 +29,7 @@ export async function loadBlogPosts(): Promise<Omit<BlogPost, "content">[]> {
   const slugs = ["pygyat", "space-tech"]; // This could be fetched from an API or directory listing
   const posts = await Promise.all(
     slugs.map(async (slug) => {
-      const response = await fetch(`${getBaseUrl()}/content/blog/${slug}.md`);
+      const response = await fetch(`${getBaseUrl()}/blog/${slug}.md`);
       const markdown = await response.text();
       const { data } = matter(markdown);
 
@@ -50,7 +50,7 @@ export async function loadBlogPosts(): Promise<Omit<BlogPost, "content">[]> {
 
 export async function loadBlogPost(slug: string): Promise<BlogPost | null> {
   try {
-    const response = await fetch(`${getBaseUrl()}/content/blog/${slug}.md`);
+    const response = await fetch(`${getBaseUrl()}/blog/${slug}.md`);
     if (!response.ok) return null;
 
     const markdown = await response.text();
