@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+"use client";
+
+import React, { useState } from "react";
 import { Experience } from "@/types";
 import ExperienceCard from "@/components/ExperienceCard";
 import { loadExperiences } from "@/data";

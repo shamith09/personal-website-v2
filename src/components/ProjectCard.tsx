@@ -1,10 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Project } from "@/types";
 import { Github } from "@geist-ui/icons";
-
-type ProjectCardProps = Project;
 
 export default function ProjectCard({
   title,
@@ -13,7 +13,7 @@ export default function ProjectCard({
   href,
   image,
   github,
-}: ProjectCardProps) {
+}: Project) {
   const router = useRouter();
 
   const handleGithubClick = (e: React.MouseEvent) => {
@@ -31,14 +31,13 @@ export default function ProjectCard({
           <div className="flex items-center gap-4 mb-4">
             <div className="flex items-center gap-4 flex-grow">
               {image && (
-                <div className="flex-shrink-0 w-8 h-8 relative">
-                  <Image
-                    src={image}
-                    alt={title}
-                    fill
-                    className="object-cover rounded-lg"
-                  />
-                </div>
+                <Image
+                  src={image}
+                  alt={title}
+                  width={32}
+                  height={32}
+                  className="object-cover rounded-lg"
+                />
               )}
               <h3 className="text-xl font-bold inline-block group-hover:text-primary transition-colors">
                 {title}

@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import { useEffect } from "react";
 import { HeroSection } from "@/sections/HeroSection";
 import { AboutSection } from "@/sections/AboutSection";
 import { ExperienceSection } from "@/sections/ExperienceSection";
@@ -9,16 +6,10 @@ import { ProjectsSection } from "@/sections/ProjectsSection";
 import { BlogSection } from "@/sections/BlogSection";
 import { ConnectSection } from "@/sections/ConnectSection";
 import { Navbar } from "@/components/Navbar";
+import ScrollBehavior from "@/components/ScrollBehavior";
 import { sections, navSections } from "@/data";
 
 export default function Home() {
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = "smooth";
-    return () => {
-      document.documentElement.style.scrollBehavior = "auto";
-    };
-  }, []);
-
   const sectionComponents = {
     hero: <HeroSection />,
     about: <AboutSection />,
@@ -30,6 +21,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
+      <ScrollBehavior />
       <Navbar sections={navSections} />
       {sections.map((section) => (
         <React.Fragment key={section.toLowerCase()}>

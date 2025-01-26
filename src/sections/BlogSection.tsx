@@ -1,32 +1,42 @@
 import React from "react";
 import Link from "next/link";
+import type { BlogPost } from "@/types";
+import fs from "fs";
+import path from "path";
 
-const posts = {
-  pygyat: {
-    slug: "pygyat",
-    title: "PyGyat - A Gen Alpha Programming Language",
-    date: "January 15, 2024",
-    description:
-      "A programming language that brings a fresh perspective to Python by replacing traditional keywords with Gen Alpha slang.",
-    tags: ["Python", "Language Design", "Compiler Theory"],
-  },
-  "space-tech": {
-    slug: "space-tech",
-    title: "Space Technology @ Cal",
-    date: "January 15, 2024",
-    description:
-      "Contributing to space technology projects as a member of Space Technology at Berkeley.",
-    tags: ["Systems Engineering", "Space Tech"],
-  },
-} as const;
+async function getBlogMetadata(): Promise<Omit<BlogPost, "content">[]> {
+  const blogDir = path.join(process.cwd(), "src/data/blog");
+  const slugs = fs
+    .readdirSync(blogDir)
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => file.replace(".mdx", ""));
 
-export const BlogSection = () => {
+  const posts = await Promise.all(
+    slugs.map(async (slug) => {
+      const { metadata } = await import(`@/data/blog/${slug}.mdx`);
+      return {
+        slug,
+        ...metadata,
+        date: new Date(metadata.date).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        }),
+      };
+    })
+  );
+  return posts;
+}
+
+export const BlogSection = async () => {
+  const posts = await getBlogMetadata();
+
   return (
     <section id="blog" className="min-h-screen flex items-center px-6 py-20">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-8">Blog</h2>
         <div className="space-y-6">
-          {Object.values(posts).map((post) => (
+          {posts.map((post) => (
             <Link
               href={`/blog/${post.slug}`}
               key={post.slug}

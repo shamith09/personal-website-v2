@@ -32,9 +32,7 @@ export default function BlogPostContent({ post }: { post: BlogPost }) {
               </span>
             ))}
           </div>
-          <div className="prose prose-invert max-w-none">
-            {post.content}
-          </div>
+          <div className="prose prose-invert max-w-none">{post.content}</div>
         </motion.article>
       </div>
     </main>
