@@ -17,7 +17,7 @@ export interface Project {
   title: string;
   description: string;
   skills: string[];
-  href: string;
+  href?: string;
   image?: string;
   github?: string;
 }

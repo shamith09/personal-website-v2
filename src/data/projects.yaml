@@ -8,16 +8,6 @@
   image: /projects/maple.png
   github: https://github.com/shamith09/maple
 
-- title: PlexTech Member Portal
-  description: A member portal for PlexTech, a UC Berkeley student organization providing software consulting services. Features include automated reimbursement processing, QR code attendance tracking, and a public forum with private/anonymous posting capabilities. Built with React.js, Flask, and MongoDB.
-  skills:
-    - HTML
-    - JavaScript
-    - SQL
-  href: https://savewithmaple.vercel.app/
-  image: /projects/plextech.png
-  github: https://github.com/PlexTechIP/plextech-member-portal
-
 - title: PyGyat
   description: A programming language based on Python that replaces keywords with Gen Alpha slang.
   skills:
@@ -26,19 +16,126 @@
   image: /projects/pygyat.webp
   github: https://github.com/shamith09/pygyat
 
-- title: The Counter
-  description: A global counter that can be incremented by anyone, anywhere, anytime.
+- title: PlexTech Member Portal
+  description: Designed and developed web portal for club members to request reimbursements, take attendance, and submit anonymous feedback. Utilized React.js, Flask, and MySQL along with Google Identity Services for authentication. Reverse-engineered BlueVine API to send ACH payments.
   skills:
-    - WebSockets
-    - Go
     - React.js
-  href: https://the-counter-nine.vercel.app/
-  image: /projects/counter.png
-  # github: https://github.com/shamith09/the-counter
-
-# - title: Space Technology @ Cal
-#   description: Contributing to space technology projects as a member of Space Technology at Berkeley.
+    - Flask
+    - MySQL
+  href: https://savewithmaple.vercel.app/
+  image: /projects/plextech.png
+  github: https://github.com/PlexTechIP/plextech-member-portal
+# - title: QubeSat
+#   description: Conducting electron spin resonance experiment on small satellite using NV-center diamond and microwave generator. Building and optimizing multithreaded C code for UART and SPI communications and controls for STM microcontroller.
 #   skills:
-#     - Systems Engineering
-#     - Space Tech
-#   href: /blog/space-tech
+#     - C
+#     - Embedded Systems
+#     - Hardware
+
+# - title: Pintos
+#   description: Built operating system using C and x86 assembly code. Features include multithreading, virtual memory, filesystem, etc. Later became a teaching assistant for this class, where I guided students on their own implementation and helped with debugging.
+#   skills:
+#     - C
+#     - Operating Systems
+#     - Assembly
+#   image: /projects/pintos.png
+
+# - title: Secure File Sharing
+#   description: Developed secure file sharing service in Golang, utilizing encryption, hashing, MACs, etc. Designed stateless system that ensures confidentiality and integrity of data in unsecured data stores.
+#   skills:
+#     - Go
+#     - Cryptography
+
+# - title: MissedMatch
+#   description: Built iOS app that notifies when someone else with the app is close to the user. Developed backend using Flask and MongoDB and made HTTP requests using Alamofire. Implemented user authentication from scratch including SHA-256 password hashing.
+#   skills:
+#     - iOS
+#     - Swift
+#     - Flask
+#     - MongoDB
+#   image: /projects/missedmatch.webp
+
+# - title: SIXT33N
+#   description: Built a voice-controlled vehicle using TI Launchpad (Arduino) and PCB components. Implemented ML voice recognition with PCA and negative feedback for controls. Engineered op-amp and BJT circuits to control motors.
+#   skills:
+#     - Arduino
+#     - Machine Learning
+#     - Hardware
+
+# - title: Gitlet
+#   description: Created Gitlet, a version control system with many features from Git, from scratch. Handled commits and file persistence using SHA-1 hashing and serialization. Commands include commit, merge, push/pull, and more.
+#   skills:
+#     - Java
+#     - Data Structures
+#     - Algorithms
+
+# - title: Scrumdinger
+#   description: Developed iOS App using SwiftUI that facilitates Scrum meetings.
+#   skills:
+#     - iOS
+#     - Swift
+#     - SwiftUI
+
+# - title: EECS 16Bot
+#   description: Engineered a Python bot to help self-grade homework from UC Berkeley's EECS 16A & 16B classes. Implemented a friendly console UI that decreases students' time spent on grading by 30%. Utilized HTTP requests to webscrape data and Splinter to automate submission.
+#   skills:
+#     - Python
+#     - Web Scraping
+#     - Automation
+
+# - title: Enigma
+#   description: Implemented Enigma, an encryption device used in World War II in Java. Combined Caesar substitution ciphers with rotating alphabet rings and permutations. Processed input and configuration files with RegEx and string manipulation.
+#   skills:
+#     - Java
+#     - Cryptography
+#     - Algorithms
+
+# - title: 8 Ball Pool
+#   description: Created realistic GUI pool game. Utilized Java Swing and OOP to render and manipulate GUI elements. Devised original physics engine for perfectly elastic collisions and friction from scratch.
+#   skills:
+#     - Java
+#     - Physics
+#     - GUI
+
+# - title: Drum Classification & Transcription
+#   description: Separated music file into different stems for kick, hi-hat, clap with Spleeter and Scipy. Used functional programming to plot WAV data in Matplotlib. Converted raw amplitude data into binary information in NumPy arrays.
+#   skills:
+#     - Python
+#     - Signal Processing
+#     - Machine Learning
+
+# - title: Scheme Interpreter
+#   description: Built interpreter for Scheme, a LISP programming language, in Python. Implemented tail-recursion optimization, dynamic and static scope, procedural programming, REPL, etc.
+#   skills:
+#     - Python
+#     - Interpreters
+#     - Programming Languages
+
+# - title: CS 61A CATS Bot
+#   description: Developed a Python bot to get on the leaderboard for CS 61A's typing speed competition. Webscraped and controlled keyboard using Splinter.
+#   skills:
+#     - Python
+#     - Web Scraping
+#     - Automation
+
+# - title: Kaggle Titanic Challenge
+#   description: Achieved 82% accuracy on the Kaggle Titanic challenge. Trained a binary classification model using Tensorflow Keras.
+#   skills:
+#     - Python
+#     - TensorFlow
+#     - Machine Learning
+
+# - title: Corona Bay
+#   description: Diagnosed COVID-19 based on CT lung scan inputs with 98%+ accuracy. Built convolutional neural network using Tensorflow in Python. Trained model on database with 2000+ samples with downsampling and upweighting.
+#   skills:
+#     - Python
+#     - TensorFlow
+#     - Machine Learning
+#     - React.js
+
+# - title: LoopHole
+#   description: Programmed Chrome extension using jQuery webscraping and HTML/CSS. Analyzed Schoolloop grade data and user input using JavaScript and updated site to show different grades' effect on final grade.
+#   skills:
+#     - JavaScript
+#     - jQuery
+#     - Chrome Extension
