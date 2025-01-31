@@ -1,3 +1,12 @@
+- title: CS 162 Attendance Tracker
+  description: Developed a real-time attendance tracking system for UC Berkeley's CS 162 course using Next.js and MySQL, featuring QR code-based check-ins, OAuth authentication, and an admin dashboard for managing attendance sessions and analytics.
+  skills:
+    - Next.js
+    - SQL
+  href: https://cs162-attendance-tracker.vercel.app/
+  image: /projects/cs162.png
+  github: https://github.com/shamith09/cs162-attendance-tracker
+
 - title: Maple
   description: An open-source alternative to PayPal Honey that automatically finds and applies the best coupon codes while you shop, without collecting your data or stealing money from affiliate links.
   skills:
