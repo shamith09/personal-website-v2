@@ -1,3 +1,14 @@
+- title: The Counter
+  description: A global counter that can be incremented in real-time by anyone, anywhere, any time.
+  skills:
+    - Next.js
+    - Go
+    - Websockets
+    - SQL
+  href: https://thecounter.live
+  image: /projects/counter.png
+  github: https://github.com/shamith09/the-counter
+
 - title: CS 162 Attendance Tracker
   description: Developed a real-time attendance tracking system for UC Berkeley's CS 162 course using Next.js and MySQL, featuring QR code-based check-ins, OAuth authentication, and an admin dashboard for managing attendance sessions and analytics.
   skills:
